@@ -10,9 +10,9 @@ function checkIfPropertyIsDefined(user, value) {
     return user.hasOwnProperty(value) && user[value] !== undefined;
 }
 
-console.log(checkIfPropertyIsDefined(user, 'firstName')); // true
-console.log(checkIfPropertyIsDefined(user, 'age')); // false
-console.log(checkIfPropertyIsDefined(user, 'height')); // false
+console.log(checkIfPropertyIsDefined(user, 'firstName'));
+console.log(checkIfPropertyIsDefined(user, 'age'));
+console.log(checkIfPropertyIsDefined(user, 'height'));
 
 // 2
 
@@ -34,3 +34,21 @@ function isObject(value) {
 console.log(isObject({}));
 console.log(isObject(10));
 console.log(isObject(null));
+
+// 4
+
+const userTwo = {
+    name: 'John'
+}
+
+function removeProperty(user, property) {
+    if (user.hasOwnProperty(property)) {
+        delete user[property];
+        return true;
+    }
+    return false;
+}
+
+console.log(removeProperty(userTwo, 'name'));
+console.log(removeProperty(userTwo, 'name'));
+console.log(removeProperty(userTwo, 'weight'));
