@@ -52,3 +52,28 @@ function removeProperty(user, property) {
 console.log(removeProperty(userTwo, 'name'));
 console.log(removeProperty(userTwo, 'name'));
 console.log(removeProperty(userTwo, 'weight'));
+
+// 5
+
+const firstJohn = {
+    firstName: 'John',
+    lastName: 'Smith'
+}
+
+const secondJohn = {
+    firstName: 'John',
+    lastName: 'Smith'
+}
+
+const adam = {
+    firstName: 'Adam',
+    lastName: 'Johnson'
+}
+
+function checkIfUsersHaveTheSameName(objectOne, objectTwo) {
+    return objectOne.firstName === objectTwo.firstName
+        && objectOne.lastName === objectTwo.lastName;
+}
+
+console.log(checkIfUsersHaveTheSameName(firstJohn, secondJohn));
+console.log(checkIfUsersHaveTheSameName(firstJohn, adam));
