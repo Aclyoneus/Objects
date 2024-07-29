@@ -13,3 +13,16 @@ function checkIfPropertyIsDefined(user, value) {
 console.log(checkIfPropertyIsDefined(user, 'firstName')); // true
 console.log(checkIfPropertyIsDefined(user, 'age')); // false
 console.log(checkIfPropertyIsDefined(user, 'height')); // false
+
+// 2
+
+const salaries = {
+    john: 50,
+    adam: 100,
+    katie: 75
+}
+
+const salarySum = salaries.john + salaries.adam + salaries.katie;
+console.log(salarySum);
+
+// 3
