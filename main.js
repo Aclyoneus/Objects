@@ -26,3 +26,11 @@ const salarySum = salaries.john + salaries.adam + salaries.katie;
 console.log(salarySum);
 
 // 3
+
+function isObject(value) {
+    return typeof value === 'object' && value !== null;
+}
+
+console.log(isObject({}));
+console.log(isObject(10));
+console.log(isObject(null));
