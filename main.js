@@ -153,3 +153,24 @@ const rooms = {
         }
     }
 }
+
+// 12
+
+function addContact(contacts, name, phoneNumber) {
+    const newContacts = {...contacts}
+
+    newContacts[name] = {
+        name: name,
+        phoneNumber: phoneNumber
+    }
+
+    return newContacts;
+}
+
+const contacts = {};
+const contactsWithJohn = addContact(contacts, 'John', '123 456 789');
+
+console.log(contactsWithJohn.John.name);
+console.log(contactsWithJohn.John.phoneNumber);
+console.log(contacts === contactsWithJohn);
+console.log(contacts.John);
