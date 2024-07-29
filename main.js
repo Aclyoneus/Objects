@@ -128,3 +128,9 @@ const newUser = getUserCopy(john);
 console.log(newUser.firstName);
 console.log(newUser.lastName);
 console.log(newUser === john);
+
+// 10
+
+function getAnimalDescription(animal){
+    return `This ${animal.color} ${animal.name} has ${animal.legs} legs.`
+}
