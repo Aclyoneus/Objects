@@ -157,7 +157,7 @@ const rooms = {
 // 12
 
 function addContact(contacts, name, phoneNumber) {
-    const newContacts = {...contacts}
+    const newContacts = {...contacts};
 
     newContacts[name] = {
         name: name,
@@ -174,3 +174,12 @@ console.log(contactsWithJohn.John.name);
 console.log(contactsWithJohn.John.phoneNumber);
 console.log(contacts === contactsWithJohn);
 console.log(contacts.John);
+
+// 13
+
+function findContact() {
+    
+}
+
+const johnContactInfo = findContact(contactsWithJohn, 'John');
+console.log(johnContactInfo);
