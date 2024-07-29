@@ -109,3 +109,22 @@ console.log(getCityInformation({
     country: 'Poland',
     areaInKilometers: 517
 }));
+
+// 9
+
+const john = {
+    firstName: 'John',
+    lastName: 'Smith'
+}
+
+function getUserCopy(user) {
+    return {
+        firstName: user.firstName,
+        lastName: user.lastName
+    }
+}
+
+const newUser = getUserCopy(john);
+console.log(newUser.firstName);
+console.log(newUser.lastName);
+console.log(newUser === john);
