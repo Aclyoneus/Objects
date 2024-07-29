@@ -77,3 +77,13 @@ function checkIfUsersHaveTheSameName(objectOne, objectTwo) {
 
 console.log(checkIfUsersHaveTheSameName(firstJohn, secondJohn));
 console.log(checkIfUsersHaveTheSameName(firstJohn, adam));
+
+// 6
+
+function getVoteCount(votes) {
+    return votes.upvotes - votes.downvotes;
+}
+
+console.log(getVoteCount({ upvotes: 10, downvotes: 5 }));
+console.log(getVoteCount({ upvotes: 75, downvotes: 90 }));
+console.log(getVoteCount({ upvotes: 50, downvotes: 50 }));
