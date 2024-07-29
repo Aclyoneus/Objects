@@ -87,3 +87,14 @@ function getVoteCount(votes) {
 console.log(getVoteCount({ upvotes: 10, downvotes: 5 }));
 console.log(getVoteCount({ upvotes: 75, downvotes: 90 }));
 console.log(getVoteCount({ upvotes: 50, downvotes: 50 }));
+
+// 7
+
+function getCubeVolume(cube) {
+    return cube.height * cube.length * cube.width;
+}
+
+console.log(getCubeVolume({ width: 10, length: 5, height: 2 }));
+console.log(getCubeVolume({ width: 100, length: 500, height: 0 }));
+console.log(getCubeVolume({ width: 15, length: 2, height: 5 }));
+
