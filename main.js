@@ -177,8 +177,11 @@ console.log(contacts.John);
 
 // 13
 
-function findContact() {
-    
+function findContact(object, property) {
+    if (object.hasOwnProperty(property)) {
+        return object[property];
+    }
+    return;
 }
 
 const johnContactInfo = findContact(contactsWithJohn, 'John');
