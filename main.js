@@ -186,3 +186,65 @@ function findContact(object, property) {
 
 const johnContactInfo = findContact(contactsWithJohn, 'John');
 console.log(johnContactInfo);
+
+// 14
+
+const userThree = {
+    firstName: 'Bob',
+    lastName: 'Ross',
+    age: 40,
+    greet() {
+        return "Hi, I'm Bob Ross!";
+    }
+}
+const objectExample = {
+    firstName: 'Kate',
+    lastName: 'Williams',
+    age: 40,
+    greet() {
+        return "Hi, I'm Kate!";
+    }
+}
+const car = {
+    make: 'Ferrari',
+    model: 'F40',
+    greet() {
+        return "<engine noise>";
+    }
+}
+
+function validateIfFirstNameisString(object) {
+    return object.hasOwnProperty('firstName')
+            && typeof object.firstName === 'string';
+}
+
+function validateIfLastNameisString(object) {
+    return object.hasOwnProperty('lastName')
+        && typeof object.lastName === 'string';
+}
+
+function validateIfAgeIsNumber(object) {
+    return object.hasOwnProperty('age')
+        && typeof object.age === 'number';
+}
+
+function validateIfGreetIsFunction(object) {
+    return (object.hasOwnProperty('greet')
+        && typeof object.greet === 'function');
+}
+
+function validateIfGreetContainsBothNames(object) {
+    return object.greet().includes(object.firstName)
+        && object.greet().includes(object.lastName);
+}
+
+function validateIfObjectIsAUser(object) {
+    return validateIfFirstNameisString(object)
+        && validateIfLastNameisString(object)
+        && validateIfAgeIsNumber(object)
+        && (validateIfGreetIsFunction(object) && validateIfGreetContainsBothNames(object));
+}
+
+console.log(validateIfObjectIsAUser(userThree));
+console.log(validateIfObjectIsAUser(objectExample));
+console.log(validateIfObjectIsAUser(car));
