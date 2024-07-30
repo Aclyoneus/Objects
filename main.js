@@ -179,7 +179,7 @@ console.log(contacts.John);
 
 function findContact(object, property) {
     if (object.hasOwnProperty(property)) {
-        return object[property];
+        return `Name: ${property}, Phone: ${object[property].phoneNumber}`;
     }
     return;
 }
