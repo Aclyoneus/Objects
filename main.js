@@ -6,8 +6,8 @@ const user = {
     age: undefined
 }
 
-function checkIfPropertyIsDefined(user, value) {
-    return user.hasOwnProperty(value) && user[value] !== undefined;
+function checkIfPropertyIsDefined(object, property) {
+    return user[property] !== undefined;
 }
 
 console.log(checkIfPropertyIsDefined(user, 'firstName'));
@@ -70,9 +70,9 @@ const adam = {
     lastName: 'Johnson'
 }
 
-function checkIfUsersHaveTheSameName(objectOne, objectTwo) {
-    return objectOne.firstName === objectTwo.firstName
-        && objectOne.lastName === objectTwo.lastName;
+function checkIfUsersHaveTheSameName(firstUser, secondUser) {
+    return firstUser.firstName === secondUser.firstName
+        && firstUser.lastName === secondUser.lastName;
 }
 
 console.log(checkIfUsersHaveTheSameName(firstJohn, secondJohn));
