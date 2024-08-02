@@ -71,8 +71,13 @@ const adam = {
 }
 
 function checkIfUsersHaveTheSameName(firstUser, secondUser) {
-    return firstUser.firstName === secondUser.firstName
-        && firstUser.lastName === secondUser.lastName;
+    const firstUserFirstName = firstUser.firstName;
+    const firstUserLastName = firstUser.lastName;
+    const secondUserFirstName = secondUser.firstName;
+    const secondUserLastName = secondUser.lastName;
+
+    return firstUserFirstName === secondUserFirstName
+        && firstUserLastName === secondUserLastName;
 }
 
 console.log(checkIfUsersHaveTheSameName(firstJohn, secondJohn));
@@ -157,14 +162,13 @@ const rooms = {
 // 12
 
 function addContact(contacts, name, phoneNumber) {
-    const newContacts = {...contacts};
-
-    newContacts[name] = {
-        name: name,
-        phoneNumber: phoneNumber
-    }
-
-    return newContacts;
+    return {
+        ...contacts,
+        [name]: {
+            name: name,
+            phoneNumber: phoneNumber
+        }
+    };
 }
 
 const contacts = {};
@@ -177,11 +181,10 @@ console.log(contacts.John);
 
 // 13
 
-function findContact(object, property) {
-    if (object.hasOwnProperty(property)) {
-        return `Name: ${property}, Phone: ${object[property].phoneNumber}`;
+function findContact(contactList, name) {
+    if (contactList.hasOwnProperty(name)) {
+        return `Name: ${name}, Phone: ${contactList[name].phoneNumber}`;
     }
-    return;
 }
 
 const johnContactInfo = findContact(contactsWithJohn, 'John');
@@ -214,23 +217,19 @@ const car = {
 }
 
 function validateIfFirstNameisString(object) {
-    return object.hasOwnProperty('firstName')
-            && typeof object.firstName === 'string';
+    return typeof object.firstName === 'string';
 }
 
 function validateIfLastNameisString(object) {
-    return object.hasOwnProperty('lastName')
-        && typeof object.lastName === 'string';
+    return typeof object.lastName === 'string';
 }
 
 function validateIfAgeIsNumber(object) {
-    return object.hasOwnProperty('age')
-        && typeof object.age === 'number';
+    return typeof object.age === 'number';
 }
 
 function validateIfGreetIsFunction(object) {
-    return (object.hasOwnProperty('greet')
-        && typeof object.greet === 'function');
+    return typeof object.greet === 'function';
 }
 
 function validateIfGreetContainsBothNames(object) {
@@ -239,10 +238,16 @@ function validateIfGreetContainsBothNames(object) {
 }
 
 function validateIfObjectIsAUser(object) {
-    return validateIfFirstNameisString(object)
-        && validateIfLastNameisString(object)
-        && validateIfAgeIsNumber(object)
-        && (validateIfGreetIsFunction(object) && validateIfGreetContainsBothNames(object));
+    const isFirstNameString = validateIfFirstNameisString(object);
+    const isLastNameString = validateIfLastNameisString(object);
+    const isAgeANumber = validateIfAgeIsNumber(object);
+    const isGreetAFunction = validateIfGreetIsFunction(object);
+    const doesGreetContainBothNames = validateIfGreetContainsBothNames(object);
+
+    return isFirstNameString
+        && isLastNameString
+        && isAgeANumber
+        && (isGreetAFunction && doesGreetContainBothNames);
 }
 
 console.log(validateIfObjectIsAUser(userThree));
